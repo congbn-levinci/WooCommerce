@@ -12,7 +12,7 @@ services:
       - ./wp:/var/www/html
     depends_on:
       - wordpress
-    networks: [wpnet]
+    networks: [ wpnet ]
 
   wordpress:
     build:
@@ -32,7 +32,7 @@ services:
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini:ro
     depends_on:
       - db
-    networks: [wpnet]
+    networks: [ wpnet ]
 
   db:
     image: mysql:8.0
@@ -45,7 +45,15 @@ services:
       - "33060:3306"
     volumes:
       - db_data:/var/lib/mysql
-    networks: [wpnet]
+    networks: [ wpnet ]
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: wp-mailhog
+    ports:
+      - "8025:8025"     # UI
+      - "1025:1025"     # SMTP host=mailhog port=1025
+    networks: [ wpnet ]
 
 volumes:
   db_data:
