@@ -1,0 +1,43 @@
+#pack-pricing-tiers {
+    margin-top: 10px;
+    padding: 0 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.tier-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.tier-row label {
+    font-weight: bold;
+    min-width: 100px;
+}
+
+.tier-row input[type="number"] {
+    width: 120px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .07);
+    background-color: #fff;
+}
+
+.tier-row .remove-tier {
+    background-color: #d63638;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.tier-row .remove-tier:hover {
+    background-color: #b32d2e;
+}
+
+#add-tier {
+    margin-top: 10px;
+    margin-left: 20px;
+}
